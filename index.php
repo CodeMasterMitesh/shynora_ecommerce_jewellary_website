@@ -51,9 +51,9 @@
                             </li>
                             <li class="switcher-option">
                                 <a href="#">
-											<span>
-												Japanese (JPY)
-											</span>
+                                    <span>
+                                        Japanese (JPY)
+                                    </span>
                                 </a>
                             </li>
                         </ul>
@@ -61,7 +61,8 @@
                 </div>
                 <ul class="header-user-links">
                     <li>
-                        <a href="index.php?p=login">Login or Register</a>
+                        <a href="index.php?p=login">Login</a>
+                        <a href="index.php?p=register">Register</a>
                     </li>
                 </ul>
             </div>
@@ -560,9 +561,6 @@
 </div>
 <?php 
 if(isset($_GET['p'])){
-    // echo "<pre>";
-    // print_r($_GET['p']);
-    // echo "</pre>";
     $page = $_GET['p'];
     include $page . '.php';
 }else{
