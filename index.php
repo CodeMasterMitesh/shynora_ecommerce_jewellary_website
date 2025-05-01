@@ -1,4 +1,10 @@
-<?php include 'config/connection.php'; ?>
+<?php 
+include 'config/connection.php'; 
+// echo "<pre>";
+// print_r($_SESSION['user']);
+// echo "</pre>";
+// exit;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,10 +67,22 @@
                     </div>
                 </div>
                 <ul class="header-user-links">
-                    <li>
-                        <a href="index.php?p=login">Login</a>
-                        <a href="index.php?p=register">Register</a>
-                    </li>
+                    <?php 
+                        if($_SESSION['user_logged_in']){
+                            ?>
+                                <a href="index.php">Welcome <?php echo $_SESSION['user']['first_name'];  ?></a>
+                            <?php
+                        }else{
+                            ?>
+                                <li>
+                                    <a href="index.php?p=login">Login</a>
+                                    <a href="index.php?p=register">Register</a>
+                                </li>
+                            <?php
+                        }
+                    
+                    ?>
+                    
                 </ul>
             </div>
         </div>
